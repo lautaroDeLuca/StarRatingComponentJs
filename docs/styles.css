@@ -15,14 +15,15 @@ body{
 }
 
 img{
-    background-color: white;
-    padding: 0.1em;
     border-radius: 50%;
-    align-items: center;
+    width: 1em;
+    height: 1em;
+    padding: .5em;
+    background-color: var(--dark-blue);
 }
 
-
 #submitButton{
+    display: flex;
     cursor: pointer;
     text-align: center;
     background-color: var(--orange-primary);
@@ -34,17 +35,23 @@ img{
 }
 
 .number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--dark-blue);
-    width: 1.5em;
-    height: 1.5em;
+    color: var(--light-grey);
+    width: 2em;
+    height: 2em;
+    padding: .35em;
     border-radius: 50%;
     text-align: center;
+    line-height: 2em;
 }
 
 .numbersContainer{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .regularText{
@@ -60,18 +67,19 @@ img{
 .container{
     background-color: white;    
     position: absolute;
-    padding: 1em;
+    padding: 2em;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 30px;
-    background: linear-gradient(315deg, var(--very-dark-blue), var(--dark-blue));
+    /* background: linear-gradient(315deg, var(--very-dark-blue), var(--dark-blue) 80%); */
+    background: radial-gradient(circle at top, var(--dark-blue)0%, var(--dark-blue) 10%, var(--very-dark-blue));
 }
 
 .starContainer{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 @media (min-width: 500px) {
