@@ -4,11 +4,32 @@
     --light-grey: hsl(217, 12%, 63%);
     --medium-grey: hsl(216, 12%, 54%);
     --dark-blue: hsl(213, 19%, 18%);
+    --dark-blue-gradient: hsl(213, 19%, 1%);
     --very-dark-blue: hsl(216, 12%, 8%);
+    font-family: 'Overpass', sans-serif;
+}
+
+body{
+    background-color: var(--very-dark-blue);
+}
+
+img{
+    margin: 5px;
+}
+
+.starContainer{
+    display: flex;
+    max-width: 25px;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: var(--dark-blue);
+    justify-content: center;
+    align-items: center;
 }
 
 #submitButton{
-
+    cursor: pointer;
+    text-align: center;
 }
 
 .number{
@@ -16,17 +37,28 @@
 }
 
 .numbersContainer{
-
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
 }
 
 .regularText{
-
+    font-weight: 400;
+    padding: 1em;
 }
 
 .boldText{
-
+    font-weight: 700;
+    padding: 1em;
 }
 
 .container{
-    
+    background-color: white;    
+    position: absolute;
+    padding: 1em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 30px;
+    background: linear-gradient(0deg, var(--dark-blue), var(--medium-grey));
 }
