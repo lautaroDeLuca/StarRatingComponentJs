@@ -14,7 +14,7 @@ body{
     background-color: var(--very-dark-blue);
 }
 
-img{
+.starImage{
     border-radius: 50%;
     width: .75em;
     height: .75em;
@@ -104,7 +104,7 @@ h2{
     transform: translate(-50%,-50%);
     border-radius: 15px;
     background: radial-gradient(circle at top, var(--dark-blue)0%, var(--dark-blue) 10%, var(--very-dark-blue));
-    min-width: 270px;
+    max-width: 295px;
 }
 
 .starContainer{
@@ -113,8 +113,24 @@ h2{
     justify-content: left;
 }
 
-@media (min-width: 500px) {
+.selection{
+    text-align: center;
+    color: orange;
+    border-radius: 1em;
+    margin: 1.25em 0;
+    display: flex;
+    justify-content: center;
+}
+
+div span{
+    background-color: var(--dark-blue);
+    padding: .4em;
+    line-height: 1em;
+    border-radius: 1em;
+}
+
+@media (max-width: 500px) {
     .container {
-        max-width: 400px;
+        min-width: 280px
     }
 }
