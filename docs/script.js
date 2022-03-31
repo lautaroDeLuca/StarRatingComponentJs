@@ -113,6 +113,11 @@ class RatingComponent extends HTMLElement {
             line-height: 2em;
             cursor: pointer;
         }
+
+        .number-focus:hover{
+            background-color: var(--orange-primary);
+            color: var(--white);
+        }
         
         .number:hover{
             background-color: var(--orange-primary);
