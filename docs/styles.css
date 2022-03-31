@@ -113,6 +113,11 @@ h2{
     justify-content: left;
 }
 
+.notification{
+    text-align: center;
+    color: red;
+}
+
 .selection{
     text-align: center;
     color: orange;
