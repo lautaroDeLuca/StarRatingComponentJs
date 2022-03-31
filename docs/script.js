@@ -33,8 +33,7 @@ class RatingComponent extends HTMLElement {
 
         for(let i=1; i<6; i++){
             let number = document.createElement('li');
-            number.setAttribute('class', 'number')
-            number.setAttribute('tab-index', i);
+            number.setAttribute('class', 'number');
             number.innerText = i;
             documentFragment.appendChild(number);
         }
