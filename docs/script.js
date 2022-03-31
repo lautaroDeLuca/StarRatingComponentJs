@@ -1,7 +1,7 @@
 class RatingComponent extends HTMLElement {
     constructor(){
         super();
-        const shadow = this.attachShadow({mode: 'open'});
+        const shadow = this.attachShadow({mode: 'open', delegatesFocus: 'false'});
 
         const starImageURL = 'https://raw.githubusercontent.com/lautaroDeLuca/StarRatingComponentJs/89d471e0bd0a83aa2ad7f37ee1451403193b4903/images/icon-star.svg';
 
@@ -34,6 +34,7 @@ class RatingComponent extends HTMLElement {
         for(let i=1; i<6; i++){
             let number = document.createElement('li');
             number.setAttribute('class', 'number')
+            number.setAttribute('tab-index', i);
             number.innerText = i;
             documentFragment.appendChild(number);
         }
@@ -98,9 +99,19 @@ class RatingComponent extends HTMLElement {
             color: var(--orange-primary);
         }
         
-        .number:focus{
+        .number-focus{
             background-color: var(--light-grey);
             color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2em;
+            height: 2em;
+            padding: .35em;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2em;
+            cursor: pointer;
         }
         
         .number:hover{
@@ -226,8 +237,13 @@ class RatingComponent extends HTMLElement {
         const number = this.shadowRoot.querySelectorAll(".number");
         for(let i=0; i<number.length; i++){
             number[i].addEventListener("click", () => {
+                if(data !== 0){
+                    this.shadowRoot.querySelector(".number-focus").setAttribute('class', 'number');
+                }
                 data = number[i].innerHTML;
+                number[i].setAttribute('class', 'number-focus');
             });
+
         }
     }
 
@@ -429,6 +445,8 @@ class ThankYouRating extends HTMLElement {
 }
 
 let data = 0;
+
+let lastSelectedNumber = 0;
 
 window.customElements.define("rating-component", RatingComponent);
 window.customElements.define("thank-you-component", ThankYouRating);
